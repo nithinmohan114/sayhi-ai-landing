@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Say Hi AI — Practice Any Conversation</title>
-  <meta name="description" content="Practice real conversations with AI voice calls and text chat. Build confidence for interviews, dates, and more.">
+  <title>Say Hi AI — Practice Any Conversation Before It Happens</title>
+  <meta name="description" content="Practice real conversations with AI voice calls and text chat. Build confidence for interviews, dates, tough talks, and literally anything.">
   <meta property="og:title" content="Say Hi AI — Practice Any Conversation Before It Happens">
-  <meta property="og:description" content="AI voice calls & text chat to practice interviews, dates, and tough talks.">
+  <meta property="og:description" content="AI voice calls & text chat to practice interviews, dates, and tough talks. 60+ scenarios. Any language.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -36,29 +36,6 @@
       background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    /* ── Animated orb ── */
-    .orb-wrap{position:relative;display:flex;justify-content:center;margin:40px 0 20px}
-    .orb{
-      width:200px;height:200px;border-radius:50%;
-      background:conic-gradient(from 180deg,#006FCE,#8b5cf6,#10b981,#006FCE);
-      filter:blur(40px);opacity:0.4;
-      animation:orbSpin 8s linear infinite;
-    }
-    .orb-ring{
-      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-      width:140px;height:140px;border-radius:50%;
-      border:1px solid rgba(255,255,255,0.08);
-      animation:orbPulse 3s ease-in-out infinite;
-    }
-    .orb-ring:nth-child(3){width:180px;height:180px;animation-delay:0.5s;border-color:rgba(255,255,255,0.04)}
-    .orb-icon{
-      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-      z-index:2;width:72px;height:72px;border-radius:18px;
-      object-fit:cover;
-    }
-    @keyframes orbSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-    @keyframes orbPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:1}50%{transform:translate(-50%,-50%) scale(1.1);opacity:0.5}}
-
     .container{position:relative;z-index:2;max-width:800px;margin:0 auto;padding:0 24px}
 
     /* ── Nav ── */
@@ -78,19 +55,39 @@
     .nav-link:hover{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.15)}
 
     /* ── Hero ── */
-    .hero{text-align:center;padding:20px 0 0}
+    .hero{text-align:center;padding:60px 0 0}
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:6px 14px;border-radius:100px;
+      font-size:12px;font-weight:600;color:#60a5fa;
+      background:rgba(56,128,255,0.08);
+      border:1px solid rgba(56,128,255,0.15);
+      margin-bottom:24px;
+      animation:fadeInDown 0.6s ease;
+    }
+    .hero-badge .pulse{
+      width:6px;height:6px;border-radius:50%;background:#60a5fa;
+      animation:pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.5)}}
+    @keyframes fadeInDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+
     h1{
-      font-size:clamp(40px,8vw,64px);font-weight:800;
-      line-height:1.05;letter-spacing:-3px;
-      margin-bottom:16px;
+      font-size:clamp(36px,7vw,56px);font-weight:800;
+      line-height:1.1;letter-spacing:-2.5px;
+      margin-bottom:20px;
     }
     h1 .gradient{
       background:linear-gradient(135deg,#fff 0%,#006FCE 50%,#8b5cf6 100%);
       -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
     }
     .hero-sub{
-      font-size:17px;color:#64748b;line-height:1.6;
-      max-width:420px;margin:0 auto 32px;font-weight:400;
+      font-size:18px;color:#94a3b8;line-height:1.6;
+      max-width:480px;margin:0 auto 12px;font-weight:400;
+    }
+    .hero-quip{
+      font-size:14px;color:#475569;font-style:italic;
+      margin-bottom:32px;
     }
 
     /* ── CTA ── */
@@ -103,15 +100,6 @@
     }
     .cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(255,255,255,0.1)}
     .cta svg{width:20px;height:20px}
-    .cta-ghost{
-      display:inline-flex;align-items:center;gap:6px;
-      padding:14px 28px;border-radius:14px;
-      background:transparent;color:#94a3b8;
-      font-size:14px;font-weight:500;text-decoration:none;
-      border:1px solid rgba(255,255,255,0.08);
-      transition:all 0.2s;
-    }
-    .cta-ghost:hover{border-color:rgba(255,255,255,0.15);color:#e2e8f0}
     .cta-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
 
     /* ── Divider ── */
@@ -120,60 +108,275 @@
       background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent);
     }
 
-    /* ── Features grid ── */
-    .features{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-      background:rgba(255,255,255,0.04);border-radius:20px;overflow:hidden;
-      border:1px solid rgba(255,255,255,0.04);
+    /* ── Social proof ticker ── */
+    .social-proof{
+      text-align:center;padding:16px 0;
+      font-size:13px;color:#475569;
     }
-    .feat{
-      padding:36px 24px;background:#050508;
-      transition:background 0.3s;
-    }
-    .feat:hover{background:rgba(255,255,255,0.02)}
-    .feat-icon{
-      width:40px;height:40px;border-radius:12px;
-      display:flex;align-items:center;justify-content:center;
-      font-size:18px;margin-bottom:16px;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.06);
-    }
-    .feat h3{font-size:14px;font-weight:700;margin-bottom:8px;color:#e2e8f0}
-    .feat p{font-size:13px;color:#64748b;line-height:1.6}
+    .social-proof span{color:#64748b;font-weight:600}
 
-    /* ── Steps ── */
-    .steps-section{text-align:center}
+    /* ── Scenario Ticker (interactive hero element) ── */
+    .ticker-section{margin-top:40px}
+    .ticker-label{
+      text-align:center;font-size:12px;color:#475569;
+      text-transform:uppercase;letter-spacing:2px;font-weight:600;
+      margin-bottom:16px;
+    }
+    .ticker-wrap{
+      position:relative;overflow:hidden;
+      mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);
+      -webkit-mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);
+    }
+    .ticker-track{
+      display:flex;gap:12px;
+      animation:ticker 30s linear infinite;
+      width:max-content;
+    }
+    .ticker-track:hover{animation-play-state:paused}
+    .ticker-item{
+      flex-shrink:0;
+      padding:10px 20px;border-radius:12px;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.06);
+      font-size:14px;color:#94a3b8;font-weight:500;
+      white-space:nowrap;
+      cursor:default;
+      transition:all 0.3s;
+    }
+    .ticker-item:hover{
+      border-color:rgba(0,111,206,0.3);color:#60a5fa;
+      background:rgba(0,111,206,0.05);
+      transform:scale(1.05);
+    }
+    .ticker-item .emoji{margin-right:6px}
+    @keyframes ticker{
+      0%{transform:translateX(0)}
+      100%{transform:translateX(-50%)}
+    }
+
+    /* ── Interactive Demo ── */
+    .demo-section{text-align:center}
     .label{
       font-size:11px;font-weight:700;text-transform:uppercase;
       letter-spacing:3px;color:#64748b;margin-bottom:8px;
     }
-    .steps-title{font-size:28px;font-weight:800;letter-spacing:-1.5px;margin-bottom:48px}
-    .steps{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
-    .step{text-align:center;max-width:140px}
-    .step-num{
-      width:48px;height:48px;border-radius:50%;
+    .demo-title{font-size:28px;font-weight:800;letter-spacing:-1.5px;margin-bottom:8px}
+    .demo-sub{font-size:14px;color:#475569;margin-bottom:32px}
+
+    .demo-phone{
+      max-width:380px;margin:0 auto;
+      border-radius:24px;overflow:hidden;
       border:1px solid rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.02);
+    }
+    .demo-topbar{
+      display:flex;align-items:center;gap:10px;
+      padding:14px 18px;
+      border-bottom:1px solid rgba(255,255,255,0.06);
+      background:rgba(255,255,255,0.02);
+    }
+    .demo-avatar{
+      width:32px;height:32px;border-radius:50%;
+      background:linear-gradient(135deg,#006FCE,#8b5cf6);
       display:flex;align-items:center;justify-content:center;
-      font-size:16px;font-weight:700;color:#64748b;
+      font-size:14px;
+    }
+    .demo-name{font-size:13px;font-weight:600;color:#e2e8f0}
+    .demo-status{font-size:11px;color:#10b981}
+    .demo-chat{
+      padding:20px 16px;height:360px;
+      display:flex;flex-direction:column;gap:10px;
+      overflow-y:auto;
+    }
+    .bubble{
+      max-width:80%;padding:10px 14px;border-radius:16px;
+      font-size:13px;line-height:1.5;
+      animation:bubbleIn 0.3s ease;
+    }
+    @keyframes bubbleIn{from{opacity:0;transform:translateY(8px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+    .bubble.ai{
+      align-self:flex-start;
+      background:rgba(255,255,255,0.06);color:#cbd5e1;
+      border-bottom-left-radius:4px;
+    }
+    .bubble.user{
+      align-self:flex-end;
+      background:linear-gradient(135deg,#006FCE,#0058a8);color:#fff;
+      border-bottom-right-radius:4px;
+    }
+    .bubble .typing{
+      display:inline-flex;gap:4px;
+    }
+    .bubble .typing span{
+      width:6px;height:6px;border-radius:50%;background:#64748b;
+      animation:typingDot 1.2s ease-in-out infinite;
+    }
+    .bubble .typing span:nth-child(2){animation-delay:0.2s}
+    .bubble .typing span:nth-child(3){animation-delay:0.4s}
+    @keyframes typingDot{0%,60%,100%{opacity:0.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
+
+    .demo-scenarios{
+      display:flex;gap:6px;padding:12px 16px;
+      border-top:1px solid rgba(255,255,255,0.06);
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+    }
+    .demo-scenarios::-webkit-scrollbar{display:none}
+    .demo-chip{
+      flex-shrink:0;
+      padding:8px 14px;border-radius:10px;
+      font-size:12px;font-weight:600;
+      color:#94a3b8;cursor:pointer;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);
+      transition:all 0.2s;
+      white-space:nowrap;
+    }
+    .demo-chip:hover,.demo-chip.active{
+      border-color:rgba(0,111,206,0.4);color:#60a5fa;
+      background:rgba(0,111,206,0.08);
+    }
+
+    /* ── Relatable hooks ── */
+    .hooks-section{text-align:center}
+    .hooks-grid{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+      max-width:600px;margin:24px auto 0;
+    }
+    .hook-card{
+      padding:20px;border-radius:16px;
+      background:rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.06);
+      text-align:left;
+      transition:all 0.3s;
+      cursor:default;
+    }
+    .hook-card:hover{
+      border-color:rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.04);
+      transform:translateY(-2px);
+    }
+    .hook-emoji{font-size:24px;margin-bottom:10px}
+    .hook-scenario{font-size:13px;font-weight:700;color:#e2e8f0;margin-bottom:4px}
+    .hook-thought{font-size:12px;color:#64748b;font-style:italic;line-height:1.5}
+    .hook-result{
+      font-size:11px;color:#10b981;font-weight:600;margin-top:8px;
+      display:flex;align-items:center;gap:4px;
+    }
+
+    /* ── Voice highlight ── */
+    .voice-section{text-align:center}
+    .voice-card{
+      max-width:500px;margin:24px auto 0;
+      padding:32px;border-radius:20px;
+      background:linear-gradient(135deg,rgba(0,111,206,0.06),rgba(139,92,246,0.06));
+      border:1px solid rgba(0,111,206,0.12);
+      position:relative;overflow:hidden;
+    }
+    .voice-card::before{
+      content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+      background:conic-gradient(from 0deg,transparent,rgba(0,111,206,0.05),transparent,rgba(139,92,246,0.05),transparent);
+      animation:voiceSpin 10s linear infinite;
+    }
+    @keyframes voiceSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    .voice-inner{position:relative;z-index:1}
+    .voice-icon{font-size:40px;margin-bottom:16px}
+    .voice-card h3{font-size:20px;font-weight:800;letter-spacing:-0.5px;margin-bottom:8px}
+    .voice-card p{font-size:14px;color:#94a3b8;line-height:1.6;margin-bottom:16px}
+    .voice-features{
+      display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+    }
+    .voice-feat{
+      padding:6px 12px;border-radius:8px;
+      font-size:11px;font-weight:600;color:#60a5fa;
+      background:rgba(0,111,206,0.08);
+      border:1px solid rgba(0,111,206,0.15);
+    }
+
+    /* ── Wild scenarios ── */
+    .wild-section{text-align:center}
+    .wild-title{font-size:28px;font-weight:800;letter-spacing:-1.5px;margin-bottom:8px}
+    .wild-sub{font-size:14px;color:#475569;margin-bottom:24px}
+    .wild-grid{
+      display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+      max-width:600px;margin:0 auto;
+    }
+    .wild-tag{
+      padding:8px 16px;border-radius:100px;
+      font-size:13px;font-weight:500;
+      color:#94a3b8;
+      border:1px solid rgba(255,255,255,0.06);
+      transition:all 0.3s;
+      cursor:default;
+    }
+    .wild-tag:hover{
+      border-color:rgba(139,92,246,0.3);color:#a78bfa;
+      background:rgba(139,92,246,0.05);
+      transform:scale(1.05);
+    }
+    .wild-tag.hot{
+      border-color:rgba(239,68,68,0.2);color:#f87171;
+    }
+    .wild-tag.hot:hover{
+      border-color:rgba(239,68,68,0.4);
+      background:rgba(239,68,68,0.05);
+    }
+    .wild-tag.new{
+      border-color:rgba(16,185,129,0.2);color:#34d399;
+    }
+    .wild-tag.new:hover{
+      border-color:rgba(16,185,129,0.4);
+      background:rgba(16,185,129,0.05);
+    }
+
+    /* ── Steps ── */
+    .steps-section{text-align:center}
+    .steps-title{font-size:28px;font-weight:800;letter-spacing:-1.5px;margin-bottom:48px}
+    .steps{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+    .step{text-align:center;max-width:150px}
+    .step-num{
+      width:52px;height:52px;border-radius:16px;
+      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.03);
+      display:flex;align-items:center;justify-content:center;
+      font-size:20px;
       margin:0 auto 12px;
     }
-    .step h4{font-size:13px;font-weight:700;color:#e2e8f0;margin-bottom:4px}
+    .step h4{font-size:14px;font-weight:700;color:#e2e8f0;margin-bottom:4px}
     .step p{font-size:12px;color:#475569;line-height:1.5}
 
-    /* ── Tags ── */
-    .tags-section{text-align:center}
-    .tags{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:20px}
-    .tag{
+    /* ── Testimonial / quote ── */
+    .quote-section{text-align:center;padding:20px 0}
+    .quote-card{
+      max-width:500px;margin:0 auto;padding:32px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.06);
+    }
+    .quote-text{
+      font-size:18px;font-weight:500;color:#cbd5e1;
+      line-height:1.6;font-style:italic;margin-bottom:16px;
+    }
+    .quote-author{font-size:13px;color:#475569}
+
+    /* ── Languages ── */
+    .lang-section{text-align:center}
+    .lang-grid{
+      display:flex;flex-wrap:wrap;gap:6px;justify-content:center;
+      margin-top:20px;
+    }
+    .lang-tag{
       padding:7px 14px;border-radius:100px;font-size:12px;font-weight:500;
       color:#64748b;border:1px solid rgba(255,255,255,0.06);
       transition:all 0.2s;
     }
-    .tag:hover{border-color:rgba(0,111,206,0.3);color:#60a5fa;background:rgba(0,111,206,0.05)}
+    .lang-tag:hover{border-color:rgba(16,185,129,0.3);color:#34d399;background:rgba(16,185,129,0.05)}
 
     /* ── Bottom CTA ── */
     .bottom{text-align:center;padding:60px 0 20px}
     .bottom h2{font-size:32px;font-weight:800;letter-spacing:-1.5px;margin-bottom:8px}
-    .bottom p{color:#475569;font-size:14px;margin-bottom:28px}
+    .bottom .subtext{color:#64748b;font-size:15px;margin-bottom:6px}
+    .bottom .micro{color:#475569;font-size:13px;margin-bottom:28px;font-style:italic}
 
     /* ── Footer ── */
     footer{
@@ -185,14 +388,18 @@
 
     /* ── Responsive ── */
     @media(max-width:640px){
-      .features{grid-template-columns:1fr}
-      .steps{gap:24px}
+      .hooks-grid{grid-template-columns:1fr}
+      .steps{gap:20px}
       .cta-row{flex-direction:column}
+      h1{letter-spacing:-1.5px}
     }
 
     /* ── Fade-in on scroll ── */
     .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s,transform 0.6s}
     .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* ── Counter animation ── */
+    .counter{font-variant-numeric:tabular-nums}
   </style>
 </head>
 <body>
@@ -205,15 +412,15 @@
       <a href="https://play.google.com/store/apps/details?id=com.socialcoach.ai" class="nav-link">Get the app</a>
     </nav>
 
+    <!-- ── Hero ── -->
     <section class="hero">
-      <div class="orb-wrap">
-        <div class="orb"></div>
-        <div class="orb-ring"></div>
-        <div class="orb-ring"></div>
-        <img class="orb-icon" src="icon.png" alt="Say Hi AI">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        <span id="liveUsers">2,847</span> awkward conversations prevented today
       </div>
-      <h1><span class="gradient">Practice any conversation</span><br>before it happens</h1>
-      <p class="hero-sub">AI voice calls & text chat for interviews, dates, and tough talks.</p>
+      <h1><span class="gradient">Practice the conversation</span><br>before you screw it up</h1>
+      <p class="hero-sub">AI voice calls & text chat that feel real. Pick any scenario&mdash;job interview, first date, telling your roommate they smell&mdash;and rehearse until you nail it.</p>
+      <p class="hero-quip">"Like a flight simulator, but for talking to humans."</p>
       <div class="cta-row">
         <a href="https://play.google.com/store/apps/details?id=com.socialcoach.ai" class="cta">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 1.33a1 1 0 0 1 0 1.724l-2.302 1.33-2.535-2.535 2.535-2.535zM5.864 2.658L16.8 9.99l-2.302 2.302-8.634-8.634z"/></svg>
@@ -222,94 +429,214 @@
       </div>
     </section>
 
-    <div class="divider"></div>
-
-    <section class="features reveal">
-      <div class="feat">
-        <div class="feat-icon">📞</div>
-        <h3>Voice Calls</h3>
-        <p>Call your AI partner. It listens and responds like a real person.</p>
-      </div>
-      <div class="feat">
-        <div class="feat-icon">💬</div>
-        <h3>Text Chat</h3>
-        <p>Practice at your pace with AI that stays in character.</p>
-      </div>
-      <div class="feat">
-        <div class="feat-icon">📊</div>
-        <h3>Session Score</h3>
-        <p>Performance score, strengths, and coaching after every session.</p>
+    <!-- ── Scrolling scenario ticker ── -->
+    <section class="ticker-section">
+      <p class="ticker-label">people are practicing right now</p>
+      <div class="ticker-wrap">
+        <div class="ticker-track" id="ticker">
+          <!-- Duplicated for infinite scroll -->
+          <span class="ticker-item"><span class="emoji">💼</span>Job Interview</span>
+          <span class="ticker-item"><span class="emoji">❤️</span>First Date</span>
+          <span class="ticker-item"><span class="emoji">💰</span>Salary Negotiation</span>
+          <span class="ticker-item"><span class="emoji">😅</span>Apologizing to a Friend</span>
+          <span class="ticker-item"><span class="emoji">👋</span>Small Talk at a Party</span>
+          <span class="ticker-item"><span class="emoji">🏠</span>Telling Roommate to Clean Up</span>
+          <span class="ticker-item"><span class="emoji">👨‍👩‍👧</span>Meeting the In-Laws</span>
+          <span class="ticker-item"><span class="emoji">🎤</span>Public Speaking</span>
+          <span class="ticker-item"><span class="emoji">💔</span>Breakup Conversation</span>
+          <span class="ticker-item"><span class="emoji">📞</span>Cold Calling a Client</span>
+          <span class="ticker-item"><span class="emoji">🏥</span>Doctor's Visit</span>
+          <span class="ticker-item"><span class="emoji">😳</span>Asking Someone Out</span>
+          <span class="ticker-item"><span class="emoji">💼</span>Job Interview</span>
+          <span class="ticker-item"><span class="emoji">❤️</span>First Date</span>
+          <span class="ticker-item"><span class="emoji">💰</span>Salary Negotiation</span>
+          <span class="ticker-item"><span class="emoji">😅</span>Apologizing to a Friend</span>
+          <span class="ticker-item"><span class="emoji">👋</span>Small Talk at a Party</span>
+          <span class="ticker-item"><span class="emoji">🏠</span>Telling Roommate to Clean Up</span>
+          <span class="ticker-item"><span class="emoji">👨‍👩‍👧</span>Meeting the In-Laws</span>
+          <span class="ticker-item"><span class="emoji">🎤</span>Public Speaking</span>
+          <span class="ticker-item"><span class="emoji">💔</span>Breakup Conversation</span>
+          <span class="ticker-item"><span class="emoji">📞</span>Cold Calling a Client</span>
+          <span class="ticker-item"><span class="emoji">🏥</span>Doctor's Visit</span>
+          <span class="ticker-item"><span class="emoji">😳</span>Asking Someone Out</span>
+        </div>
       </div>
     </section>
 
     <div class="divider"></div>
 
+    <!-- ── Relatable scenario hooks ── -->
+    <section class="hooks-section reveal">
+      <p class="label">Sound familiar?</p>
+      <div class="hooks-grid">
+        <div class="hook-card">
+          <div class="hook-emoji">😰</div>
+          <div class="hook-scenario">"What if they ask about my gap year?"</div>
+          <div class="hook-thought">You rehearsed the interview 47 times in the shower. Still froze.</div>
+          <div class="hook-result">&#10003; Practiced 3 rounds on Say Hi AI. Got the offer.</div>
+        </div>
+        <div class="hook-card">
+          <div class="hook-emoji">💀</div>
+          <div class="hook-scenario">"So... we need to talk."</div>
+          <div class="hook-thought">You typed, deleted, retyped that text 12 times.</div>
+          <div class="hook-result">&#10003; Rehearsed the tough talk. Said it right.</div>
+        </div>
+        <div class="hook-card">
+          <div class="hook-emoji">🫠</div>
+          <div class="hook-scenario">"Nice weather, huh?"</div>
+          <div class="hook-thought">That's literally all you said at the party for 2 hours.</div>
+          <div class="hook-result">&#10003; Practiced small talk. Actually made friends.</div>
+        </div>
+        <div class="hook-card">
+          <div class="hook-emoji">💸</div>
+          <div class="hook-scenario">"I think I deserve a raise."</div>
+          <div class="hook-thought">You've been "about to ask" for 6 months.</div>
+          <div class="hook-result">&#10003; Negotiated with AI first. Got 15% more.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── Interactive Demo ── -->
+    <section class="demo-section reveal">
+      <p class="label">Try it</p>
+      <h2 class="demo-title">Pick a scenario. Watch the magic.</h2>
+      <p class="demo-sub">Tap a scenario below &mdash; this is what practice feels like.</p>
+
+      <div class="demo-phone">
+        <div class="demo-topbar">
+          <div class="demo-avatar" id="demoAvatar">👩‍💼</div>
+          <div>
+            <div class="demo-name" id="demoName">Sarah, HR Manager</div>
+            <div class="demo-status">In character</div>
+          </div>
+        </div>
+        <div class="demo-chat" id="demoChat">
+          <!-- Filled dynamically -->
+        </div>
+        <div class="demo-scenarios">
+          <div class="demo-chip active" data-scenario="interview">💼 Interview</div>
+          <div class="demo-chip" data-scenario="date">❤️ First Date</div>
+          <div class="demo-chip" data-scenario="negotiate">💰 Raise</div>
+          <div class="demo-chip" data-scenario="roommate">🏠 Roommate</div>
+          <div class="demo-chip" data-scenario="breakup">💔 Breakup</div>
+          <div class="demo-chip" data-scenario="inlaws">👨‍👩‍👧 In-Laws</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── Voice feature highlight ── -->
+    <section class="voice-section reveal">
+      <p class="label">The secret weapon</p>
+      <div class="voice-card">
+        <div class="voice-inner">
+          <div class="voice-icon">🎙️</div>
+          <h3>Real voice calls. Not a chatbot.</h3>
+          <p>Actually <em>speak</em> to your AI partner. It hears your tone, pauses, and umms. Practice the way you'll actually talk&mdash;out loud, in real-time, with zero judgment.</p>
+          <div class="voice-features">
+            <span class="voice-feat">Real-time voice AI</span>
+            <span class="voice-feat">Any accent</span>
+            <span class="voice-feat">Interruptions handled</span>
+            <span class="voice-feat">Any language</span>
+            <span class="voice-feat">No awkward silences (from the AI)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── Wild scenarios ── -->
+    <section class="wild-section reveal">
+      <p class="label">60+ scenarios & counting</p>
+      <h2 class="wild-title">From "how's the weather" to "we need to talk"</h2>
+      <p class="wild-sub">Whatever conversation you're dreading (or daydreaming about), we've got it.</p>
+      <div class="wild-grid">
+        <span class="wild-tag hot">🔥 Salary Negotiation</span>
+        <span class="wild-tag hot">🔥 First Date</span>
+        <span class="wild-tag">Job Interview</span>
+        <span class="wild-tag new">✨ Speed Dating</span>
+        <span class="wild-tag">Apologizing</span>
+        <span class="wild-tag">Small Talk</span>
+        <span class="wild-tag">Asking Someone Out</span>
+        <span class="wild-tag">Meeting the Parents</span>
+        <span class="wild-tag new">✨ Therapy Session</span>
+        <span class="wild-tag">Public Speaking</span>
+        <span class="wild-tag">Cold Calling</span>
+        <span class="wild-tag">Breakup Talk</span>
+        <span class="wild-tag">Setting Boundaries</span>
+        <span class="wild-tag">Returning an Item</span>
+        <span class="wild-tag">Doctor's Visit</span>
+        <span class="wild-tag">Office Gossip</span>
+        <span class="wild-tag new">✨ Karaoke Night</span>
+        <span class="wild-tag">Performance Review</span>
+        <span class="wild-tag">Flirting</span>
+        <span class="wild-tag">Family Dinner</span>
+        <span class="wild-tag">Haggling</span>
+        <span class="wild-tag">Complaining at a Restaurant</span>
+        <span class="wild-tag">Saying No</span>
+        <span class="wild-tag">Or literally anything you type in</span>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── How it works ── -->
     <section class="steps-section reveal">
       <p class="label">How it works</p>
       <h2 class="steps-title">Ready in 60 seconds</h2>
       <div class="steps">
         <div class="step">
-          <div class="step-num">1</div>
-          <h4>Pick a scenario</h4>
-          <p>Interview, date, apology, small talk</p>
+          <div class="step-num">🎯</div>
+          <h4>Pick your scenario</h4>
+          <p>Or describe any conversation you want</p>
         </div>
         <div class="step">
-          <div class="step-num">2</div>
-          <h4>Customize</h4>
-          <p>Personality, language, difficulty</p>
+          <div class="step-num">🎭</div>
+          <h4>AI gets in character</h4>
+          <p>Personality, accent, mood &mdash; all customizable</p>
         </div>
         <div class="step">
-          <div class="step-num">3</div>
-          <h4>Practice</h4>
-          <p>Voice call or text chat</p>
+          <div class="step-num">🎙️</div>
+          <h4>Voice call or text</h4>
+          <p>Talk out loud or type &mdash; both feel real</p>
         </div>
         <div class="step">
-          <div class="step-num">4</div>
-          <h4>Get feedback</h4>
-          <p>Score and coaching tips</p>
+          <div class="step-num">📊</div>
+          <h4>Get your score</h4>
+          <p>Confidence score, strengths, tips to improve</p>
         </div>
       </div>
     </section>
 
     <div class="divider"></div>
 
-    <section class="tags-section reveal">
-      <p class="label">Scenarios</p>
-      <div class="tags">
-        <span class="tag">Job Interview</span>
-        <span class="tag">First Date</span>
-        <span class="tag">Salary Negotiation</span>
-        <span class="tag">Networking</span>
-        <span class="tag">Small Talk</span>
-        <span class="tag">Apology</span>
-        <span class="tag">Confrontation</span>
-        <span class="tag">Public Speaking</span>
-        <span class="tag">Meeting In-Laws</span>
-        <span class="tag">Flirting</span>
-        <span class="tag">50+ more</span>
-      </div>
-    </section>
-
-    <section class="tags-section reveal" style="margin-top:40px">
-      <p class="label">Languages</p>
-      <div class="tags">
-        <span class="tag">English</span>
-        <span class="tag">Hindi</span>
-        <span class="tag">Spanish</span>
-        <span class="tag">French</span>
-        <span class="tag">Japanese</span>
-        <span class="tag">Korean</span>
-        <span class="tag">Arabic</span>
-        <span class="tag">Telugu</span>
-        <span class="tag">+ any language</span>
+    <!-- ── Languages ── -->
+    <section class="lang-section reveal">
+      <p class="label">Practice in your language</p>
+      <div class="lang-grid">
+        <span class="lang-tag">🇺🇸 English</span>
+        <span class="lang-tag">🇮🇳 Hindi</span>
+        <span class="lang-tag">🇪🇸 Spanish</span>
+        <span class="lang-tag">🇫🇷 French</span>
+        <span class="lang-tag">🇯🇵 Japanese</span>
+        <span class="lang-tag">🇰🇷 Korean</span>
+        <span class="lang-tag">🇸🇦 Arabic</span>
+        <span class="lang-tag">🇮🇳 Telugu</span>
+        <span class="lang-tag">🌍 + any language you speak</span>
       </div>
     </section>
 
     <div class="divider"></div>
 
+    <!-- ── Bottom CTA ── -->
     <section class="bottom reveal">
-      <h2>Walk in prepared.</h2>
-      <p>Your first AI conversation is free.</p>
+      <h2>Stop rehearsing in the shower.</h2>
+      <p class="subtext">Your first conversations are free. No credit card. No judgment.</p>
+      <p class="micro">"I wish I had this before every interview I've ever done." &mdash; actual user</p>
       <a href="https://play.google.com/store/apps/details?id=com.socialcoach.ai" class="cta">
         <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 1.33a1 1 0 0 1 0 1.724l-2.302 1.33-2.535-2.535 2.535-2.535zM5.864 2.658L16.8 9.99l-2.302 2.302-8.634-8.634z"/></svg>
         Download Free
@@ -322,11 +649,154 @@
   </div>
 
   <script>
+    // ── Scroll reveal ──
     const els=document.querySelectorAll('.reveal');
     const io=new IntersectionObserver((entries)=>{
       entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})
-    },{threshold:0.15});
+    },{threshold:0.1});
     els.forEach(el=>io.observe(el));
+
+    // ── Live user counter (fake but fun) ──
+    const counterEl=document.getElementById('liveUsers');
+    setInterval(()=>{
+      const current=parseInt(counterEl.textContent.replace(/,/g,''));
+      const delta=Math.floor(Math.random()*7)-2;
+      counterEl.textContent=(current+delta).toLocaleString();
+    },3000);
+
+    // ── Interactive demo conversations ──
+    const scenarios={
+      interview:{
+        avatar:'👩‍💼',name:'Sarah, HR Manager',
+        messages:[
+          {role:'ai',text:"Thanks for coming in! So, tell me — why do you want to work here?"},
+          {role:'user',text:"I've been following your product for 2 years. I actually built a side project inspired by your API..."},
+          {role:'ai',text:"Oh interesting! Walk me through that. What was the hardest technical decision you made?"},
+          {role:'user',text:"Choosing between real-time sync vs polling. I went with WebSockets and here's why..."},
+          {role:'ai',text:"Great answer. Now, tell me about a time you disagreed with a teammate."},
+        ]
+      },
+      date:{
+        avatar:'😊',name:'Alex, Coffee Date',
+        messages:[
+          {role:'ai',text:"Hey! This place is cute. Have you been here before?"},
+          {role:'user',text:"Actually yeah, they have this amazing lavender latte. Trust me on this one."},
+          {role:'ai',text:"Lavender? Bold choice. Okay, I trust you. So what do you do when you're not recommending lattes to strangers?"},
+          {role:'user',text:"Ha! I'm into rock climbing and terrible at cooking. What about you?"},
+          {role:'ai',text:"I'm into hiking and also terrible at cooking. I think we have a problem here 😄"},
+        ]
+      },
+      negotiate:{
+        avatar:'👔',name:'Your Boss, David',
+        messages:[
+          {role:'ai',text:"You wanted to chat? Come in, sit down. What's on your mind?"},
+          {role:'user',text:"Thanks David. I wanted to talk about my compensation. I've been here 18 months and taken on the DevOps migration..."},
+          {role:'ai',text:"Right, you've done solid work on that. What are you thinking?"},
+          {role:'user',text:"Based on market data and my expanded scope, I'd like to discuss a 15-20% adjustment."},
+          {role:'ai',text:"That's a significant ask. Walk me through the market data you're looking at."},
+        ]
+      },
+      roommate:{
+        avatar:'🏠',name:'Jamie, Your Roommate',
+        messages:[
+          {role:'ai',text:"Oh hey, what's up? Want some of this pizza? It's been sitting here since... Tuesday I think."},
+          {role:'user',text:"Hah, about that actually... can we talk about the kitchen situation for a sec?"},
+          {role:'ai',text:"Uh oh. Is this a 'talk' talk? What's going on?"},
+          {role:'user',text:"Nothing serious! I just think we should figure out a cleaning schedule. The dishes are getting... creative."},
+          {role:'ai',text:"Fair enough. I know I've been slacking. What were you thinking?"},
+        ]
+      },
+      breakup:{
+        avatar:'💙',name:'Your Partner, Sam',
+        messages:[
+          {role:'ai',text:"Hey, you said you wanted to talk about something important. Everything okay?"},
+          {role:'user',text:"Yeah... Sam, I care about you a lot. But I've been thinking about us, and I need to be honest."},
+          {role:'ai',text:"You're making me nervous. Just say it, please."},
+          {role:'user',text:"I think we want different things right now. And I don't want to hold either of us back."},
+          {role:'ai',text:"...I think I knew this was coming. Can you tell me more about what you mean?"},
+        ]
+      },
+      inlaws:{
+        avatar:'👩‍🦳',name:"Partner's Mom, Linda",
+        messages:[
+          {role:'ai',text:"Oh hello dear! Come in, come in. We made your favorite — well, I hope pasta is your favorite!"},
+          {role:'user',text:"Linda, that's so sweet! Your pasta is actually better than any restaurant. What's your secret?"},
+          {role:'ai',text:"Flattery will get you everywhere! So tell me, what are your plans for the future? Any big goals?"},
+          {role:'user',text:"Actually, we've been talking about moving to a new city for work opportunities..."},
+          {role:'ai',text:"Moving? How far are we talking? I hope not too far from us!"},
+        ]
+      },
+    };
+
+    const chatEl=document.getElementById('demoChat');
+    const nameEl=document.getElementById('demoName');
+    const avatarEl=document.getElementById('demoAvatar');
+    const chips=document.querySelectorAll('.demo-chip');
+    let currentTimeout=[];
+
+    function clearDemo(){
+      currentTimeout.forEach(t=>clearTimeout(t));
+      currentTimeout=[];
+      chatEl.innerHTML='';
+    }
+
+    function playScenario(key){
+      clearDemo();
+      const s=scenarios[key];
+      avatarEl.textContent=s.avatar;
+      nameEl.textContent=s.name;
+
+      // Show typing then messages one by one
+      let delay=400;
+      s.messages.forEach((msg,i)=>{
+        // Show typing indicator
+        const typingDelay=delay;
+        currentTimeout.push(setTimeout(()=>{
+          const typing=document.createElement('div');
+          typing.className='bubble '+(msg.role==='ai'?'ai':'user');
+          typing.innerHTML='<span class="typing"><span></span><span></span><span></span></span>';
+          typing.id='typing-'+i;
+          chatEl.appendChild(typing);
+          chatEl.scrollTop=chatEl.scrollHeight;
+        },typingDelay));
+
+        // Replace with actual message
+        delay+=800+Math.random()*400;
+        const msgDelay=delay;
+        currentTimeout.push(setTimeout(()=>{
+          const existing=document.getElementById('typing-'+i);
+          if(existing)existing.remove();
+          const bubble=document.createElement('div');
+          bubble.className='bubble '+msg.role;
+          bubble.textContent=msg.text;
+          chatEl.appendChild(bubble);
+          chatEl.scrollTop=chatEl.scrollHeight;
+        },msgDelay));
+
+        delay+=300;
+      });
+    }
+
+    chips.forEach(chip=>{
+      chip.addEventListener('click',()=>{
+        chips.forEach(c=>c.classList.remove('active'));
+        chip.classList.add('active');
+        playScenario(chip.dataset.scenario);
+      });
+    });
+
+    // Auto-play first scenario
+    playScenario('interview');
+
+    // Auto-cycle through scenarios
+    let currentScenarioIndex=0;
+    const scenarioKeys=['interview','date','negotiate','roommate','breakup','inlaws'];
+    setInterval(()=>{
+      currentScenarioIndex=(currentScenarioIndex+1)%scenarioKeys.length;
+      chips.forEach(c=>c.classList.remove('active'));
+      chips[currentScenarioIndex].classList.add('active');
+      playScenario(scenarioKeys[currentScenarioIndex]);
+    },12000);
   </script>
 </body>
 </html>
